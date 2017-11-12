@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/Paikz/ramverk2?branch=master)](https://bettercodehub.com/)
+
 # ramverk2
 
 ## Installation
