@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title= title
+        block style
+            link(rel="stylesheet", href="/css/style.css", type='text/css')
+    body
+      .wrapper
+        include header.pug
+        block content
+      include footer.pug

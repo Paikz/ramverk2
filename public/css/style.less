@@ -1,0 +1,128 @@
+@import "node_modules/normalize.less/normalize.less";
+@import "fonts.less";
+
+@gray-border: #afb0af;
+@gray-background: #eee;
+@gray-text: #888888;
+@black: #000;
+@white: #fff;
+
+html  {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: 0 auto 100px;
+    width: 100%;
+}
+
+#image {
+    position: relative;
+    top: 0;
+}
+
+.wrapper {
+  width: 43%;
+  margin: 0 auto;
+}
+
+//header
+
+.header-container {
+  text-align: center;
+}
+
+.logo {
+  h3 {
+    font-size: 4em;
+    font-family: nexa2, sans-serif;
+    margin: 10px;
+  }
+}
+
+.navbar {
+  a {
+    display: inline-block;
+
+    -webkit-transition: all 0.5s ease; /* Safari and Chrome */
+    -moz-transition: all 0.5s ease; /* Firefox */
+    -ms-transition: all 0.5s ease; /* IE 9 */
+    -o-transition: all 0.5s ease; /* Opera */
+    transition: all 0.5s ease;
+
+    font-family: hellost, sans-serif;
+    font-size: 5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    text-decoration: none;
+  }
+
+  a:hover {
+    -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
+  }
+
+  a:visited {
+    color: @black;
+  }
+}
+
+//content
+
+.content {
+  margin: 0 auto;
+  margin-top: 0.5em;
+  min-height: 45vh;
+  width: 100%;
+  padding: 0.5em;
+  text-align: justify;
+
+  h1 {
+    font-family: nexa, sans-serif;
+  }
+}
+
+.filler {
+  height: 40vh;
+}
+
+//footer
+
+#skyline {
+  position: absolute;
+  bottom: 105px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.footer-container {
+  background-color: @black;
+  color: @white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 120px;
+  width: 100%;
+}
+
+.footer-nav {
+  position: absolute;
+  bottom: 5;
+  left: 0;
+  right: 0;
+  text-align: center;
+  a {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    font-family: nexa, sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+  a:visited {
+    color: @white;
+  }
+}
