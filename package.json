@@ -5,7 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "node6": "docker-compose up -d node6",
+    "node7": "docker-compose up -d node7",
+    "node8": "docker-compose up -d node8",
+    "node9": "docker-compose up -d node9",
+    "stop": "docker-compose down"
   },
   "author": "",
   "license": "ISC",
