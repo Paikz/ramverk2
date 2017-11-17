@@ -1,6 +1,6 @@
 {
   "name": "express-demo",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Test project in express",
   "main": "app.js",
   "scripts": {
