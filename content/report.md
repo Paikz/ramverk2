@@ -16,7 +16,28 @@ Nej det gjorde jag inte. Jag tittade istället på mos struktur på github samt 
 Jag använder markdown-it för att kunna inkludera markdown i mina vyer. Det är väldigt smidigt, speciellt nu när jag skriver min redovisning. Dock kan jag tycka att det är överdrivet att använda markdown i vissa sammanhang, som till exempel viss text på startsidan. Jag är bekväm med att använda markdown på routes med stora textstycken, annars tycker jag vanlig html funkar väl.
 
 # KMOM02
-TBA
+**Har du jobbat med Docker eller andra virtualiseringstekniker innan?**
+
+Jag har jobbat med virtualbox och vagrant innan. Det var dock inte jag som satte upp det så man kan i princip säga att jag är helt ny till denna sortens teknik. Jag har länge förstått vad man använder virtualisering till inom webbutveckling men jag har inte använt tekniken på ett meningsfullt sätt. Det ska bli spännande att integrera docker med enhetstestning senare i kursmomenten.
+
+**Hur ser du på möjligheterna att använda dig av Docker för att jobba med tester av ditt repo?**
+
+När man väl fått igång docker så är det väldigt smidigt. Det känns som att docker kommer göra det mycket lättare att enhetstesta sin kod under olika konfigurationer och versioner jämfört med tidigare då man i princip endast testat sin kod på de versionerna av programvaran man hade installerad.
+
+**Gick allt smidigt eller stötte du på problem?**
+
+Det verkar som att jag stötte på mer problem än majoriteten av kursdeltagarna. Eftersom att jag satt på Windows 10 Home så såg jag att man kunde använda Docker-toolbox. Jag installerade det och försökte starta men inget gick rätt till. Toolbox verkade inte gilla att jag hade olika sökvägar på specifika program (Git) då jag har flera diskar. Därför blev det till att skaffa Edu versionen av Windows 10 från BTH och uppgradera. Då kunde jag installera vanliga versionen av Docker.  
+
+Installationen gick felfri men jag stötte på problem åter igen när jag skulle bocka i vilka diskar jag ville dela med Docker. Docker behövde mitt lokala Windows konto användarnamn och lösenord. Jag har dock inget lösenord på mitt konto eftersom att jag vill att min dator ska ha snabb uppstart utan hinder. Gissa vad Docker krävde att jag skulle lägga till? ¯\\_(ツ)_/¯
+
+När jag väl kom igång med Docker så fick jag problem med att sätta upp en container som delade filer med en lokal folder. Det var --volume flaggan som krånglade. Efter felsökande kom jag på att jag inte fick sitta i cygwin eller git bashen. Det var bäst att använda windows powershell märkte jag. Git bash och cygwin la till ett sorts prefix på sökvägarna som förhindrade containern att hitta rätt.
+
+När jag väl kommit över hindret med att installera och få upp en container så gick det mycket smidigare. Det tog lite tid att komma på vad yml filen behövde när det kom till att sätta upp node, det var dock inget man blev frustrerad över. Nu när man är klar så verkar Docker vara väldigt smidigt. Containers går upp och ner väldigt snabbt och det ska bli spännande att enhetstesta i nästa kmom!
+
+**Skapade du din egen image, berätta om den?**
+
+Nej det gjorde jag ej. Det känns inte som att jag behöver en egen image just nu. Dock skulle det nog behövas senare vid enhetstestning. Det är något man får kolla på efter hand känner jag.
+
 # KMOM03
 TBA
 # KMOM04
