@@ -6,7 +6,7 @@ var lessMiddleware = require('less-middleware');
 const path = require("path");
 
 //Routes
-var mainRoutes = require('../routes/routes');
+var routes = require('../routes/routes');
 
 var app = express();
 
@@ -19,9 +19,9 @@ if (app.get('env') === 'development') {
 }
 
 //map routes to right directory
-app.use(lessMiddleware(__dirname + '/public'));
-app.use(express.static(path.join(__dirname, '/public')));
-app.use('/', mainRoutes);
+app.use(lessMiddleware(__dirname + '../public'));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use('/', routes);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {

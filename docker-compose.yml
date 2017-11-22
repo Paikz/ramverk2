@@ -48,3 +48,19 @@ services:
         volumes:
             - .:/home/node/app
         command: "npm start"
+    test-node6:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-6-alpine
+    test-node7:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-7-alpine
+    test-node8:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-8-alpine
+    test-node9:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-9-alpine

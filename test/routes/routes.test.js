@@ -3,6 +3,7 @@
  */
 "use strict";
 
+/* global before it describe */
 var request = require('supertest');
 
 describe('loading express', function() {

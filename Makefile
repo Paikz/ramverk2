@@ -52,7 +52,6 @@ BEHAT   := $(BIN)/behat
 SHELLCHECK := $(BIN)/shellcheck
 BATS       := $(BIN)/bats
 
-HTMLHINT  := $(NODEMODBIN)/htmlhint
 STYLELINT := $(NODEMODBIN)/stylelint
 ESLINT    := $(NODEMODBIN)/eslint
 JSONLINT  := $(NODEMODBIN)/jsonlint
@@ -121,7 +120,7 @@ check: check-tools-js #check-tools-bash check-tools-php
 
 # target: test               - Run all tests.
 .PHONY: test
-test: htmlhint stylelint eslint jsunittest
+test: stylelint eslint jsunittest
 	@$(call HELPTEXT,$@)
 	[ ! -f composer.json ] || composer validate
 
@@ -129,7 +128,7 @@ test: htmlhint stylelint eslint jsunittest
 
 # target: doc                - Generate documentation.
 .PHONY: doc
-doc: 
+doc:
 	@$(call HELPTEXT,$@)
 
 
@@ -178,7 +177,7 @@ tag-prepare:
 .PHONY: setup-tools-js
 setup-tools-js:
 	@$(call HELPTEXT,$@)
-	npm install --save-dev htmlhint stylelint eslint eslint-plugin-pug eslint-plugin-react jsonlint js-yaml html-minifier clean-css-cli uglify-es mocha nyc coveralls codecov
+	npm install --save-dev stylelint eslint eslint-plugin-pug eslint-plugin-react jsonlint js-yaml html-minifier clean-css-cli uglify-es mocha nyc coveralls codecov
 
 
 
@@ -196,7 +195,6 @@ check-tools-js:
 	@$(call HELPTEXT,$@)
 	@$(call CHECK_VERSION, node)
 	@$(call CHECK_VERSION, npm)
-	@$(call CHECK_VERSION, $(HTMLHINT))
 	@$(call CHECK_VERSION, $(STYLELINT))
 	@$(call CHECK_VERSION, $(ESLINT))
 	@$(call CHECK_VERSION, $(JSONLINT))
@@ -209,13 +207,6 @@ check-tools-js:
 	@#@$(call CHECK_VERSION, $(COVERALLS))
 	@#@$(call CHECK_VERSION, $(CODECOV))
 
-
-
-# target: htmlhint           - HTMLhint linter.
-.PHONY: htmlhint
-htmlhint:
-	@$(call HELPTEXT,$@)
-	[ ! -f .htmlhintrc ] || $(HTMLHINT) --ignore build/**,node_modules/** | grep -v "Config loaded:"
 
 
 
@@ -259,7 +250,7 @@ ifneq ($(wildcard .nycrc),)
 	[ ! -d test ] || $(NYC) $(MOCHA) --reporter dot 'test/**/*.js'
 else
 	[ ! -d test ] || $(MOCHA) --reporter dot 'test/**/*.js'
-endif 
+endif
 
 
 

@@ -22,7 +22,11 @@ Clone the repository
 
 Start up an express server with Docker:  
 `npm run node[version]`  
-    Currently supported: node 6,7,8,9
+     Currently supported: node 6,7,8,9
 
 Stop docker containers:  
 `npm run stop` || `npm stop`  
+
+Run tests for different node versions:  
+`npm run test-node[version]`
+     Currently supported: node 6,7,8,9
