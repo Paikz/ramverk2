@@ -9,5 +9,5 @@ var server = http.createServer(app);
 console.log("Express is ready.");
 const port = process.env.DBWEBB_PORT || '3000';
 
-app.listen(port);
+server.listen(port);
 console.log("Listening on port: " + port);

@@ -7,9 +7,10 @@ var request = require('supertest');
 
 describe('loading express', function() {
     var server;
+
     before(function() {
         server = require('../../bin/app');
-    })
+    });
 
     it('respond to /', function testIndex(done) {
         request(server)
