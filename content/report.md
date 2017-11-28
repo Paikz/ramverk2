@@ -39,7 +39,29 @@ När jag väl kommit över hindret med att installera och få upp en container s
 Nej det gjorde jag ej. Det känns inte som att jag behöver en egen image just nu. Dock skulle det nog behövas senare vid enhetstestning. Det är något man får kolla på efter hand känner jag.
 
 # KMOM03
-TBA
+
+**Berätta vilka tekniker/verktyg du valde för enhetstester och kodtäckning och varför?**
+
+Till redovisningssidan samt serversidan till appen så använder jag Mocha för enhetstestning och Istanbul till kodtäckning. För att kunna testa http requests så använder jag supertest.  
+
+Min klient använder Angular och filerna är genererade genom Angulars egna CLI. Därför packas Jasmin och Istanbul med och kofigureras upp automatiskt vilket är anledningen till att jag inte använde Mocha till klienten.
+
+**Berätta om cin CI-kedja och reflektera över de valen du gjorde?**
+
+Till min redovisningssida så testade jag på de flesta verktygen och la till en badge i readme'n. Jag gillade vissa och tyckte vissa var överflödiga. Jag har valt att använda Travis CI för att vara säker på att varje commit byggs korrekt, Scrutinizer för kodkvalite och Coveralls för kodtäckning. Dessa verktygen i kombination med varandra tycker jag ger en hjälpsam uppfattning om projektets kvalitet samt hur man kan förbättra det. Man kan såklart göra en CI kjedja med fler verktyg som täcker samma sak bara för att vara säker, men jag tycker inte det är nödvändigt. Största anledningen till att jag valde verktygen var framför allt utseendet.
+
+**Reflektera över hur det gick att integrera enhetstesterna i olika Docker-kontainerns och om du ser någon nytta med detta.**
+
+Jag ser helt klart nytta med att kunna enhetstesta i dockercontainers, dock vet jag inte om vi kommer få någon stor nytta av det i den här kursen. Dock är jag väldigt glad över att ha fått konfigurera upp Docker, det var väldigt nyttigt. Det tar sin tid, men när allt väl fungerar så är det smidigt att dra upp containers. Att integrera enhetstester var en utmaning för man måste tänka på ett annat sätt. Först måste man skriva dockerfilen där man måste tänka till vad containern behöver, vilka commands som ska köras etc. Angular använder Jasmin för att enhetstesta som i sin tur använder en webbläsare för att displaya resultatet. Därför behövs en headless browser i containern för att testerna ska gå igenom. Det var en del trial & error vilket var frustrerande men jag fick det att fungera till slut.
+
+**Hur väl lyckades du utvärdera TDD-konceptet och vilka är dina reflektioner?**
+
+Jag har använt TDD i andra kurser innan så jag är väl medveten om fördelarna med det. Främst så ser jag det som ett bra sätt att inte glömma bort att enhetstesta. Det är lätt att springa ifrån med kodandet och sen skita i att testa koden. Dock måste jag ändå säga att jag inte är en stor fan av TDD. Det tar alldeles för lång tid att hålla på att gå fram och tillbaks till att skriva kod och tester och det kan i de flesta fallen också vara väldigt tråkigt. Jag förstår dock nyttan med det och ska försöka hålla uppe min kodtäckning så gott jag kan under kursen.
+
+**Berätta om tankarna kring din klient/server applikation och nämn de tekniker du använder.**
+
+Jag har för tillfället ej kommit på något speciellt jag vill göra med min applikation, så jag har bara konfigurerat upp en placeholder server och klient så att jag lätt kan börja arbeta senare när jag kommit på en ide att slutföra. Klienten använder som sagt Angular och servern använder express. Angular använder Typescript, ett superset till javascript och på stylesidan så används LESS. CI kjedjan är uppgjord av Travis CI, Scrutinizer CI samt Coveralls. Servern är tänkt att fungera som ett REST API och använda mongoDB i framtiden. Detta är dock inte riktigt implementerat än.
+
 # KMOM04
 TBA
 # KMOM05
