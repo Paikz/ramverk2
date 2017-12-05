@@ -4,7 +4,7 @@
   "description": "Test project in express",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --reporter=dot test/**/*.js",
+    "test": "nyc --all --reporter=html --reporter=text mocha --reporter=dot test/**/*.js",
     "report-coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf npm-debug.log coverage .nyc_output",
     "preclean-all": "npm run clean",
