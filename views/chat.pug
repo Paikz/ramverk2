@@ -1,0 +1,48 @@
+extend layout.pug
+
+block content
+    h1 Websocket Chat
+    p Select what subprotocol to use when connecting to an server. Each server supports its own variants of subprotocols.
+
+    ul
+        li
+            p ws://dbwebb.se:1337/ supports broadcast-protocol, echo-protocol/none.
+        li
+            p ws://demos.kaazing.com/echo supports no subprotocols.
+        li
+            p ws://localhost:3000/ supports text or json
+
+    p Open up devtools and see output in the console and network tab.
+
+    p
+        form(action='/chat', method='POST')
+            label Connect:
+            input(id='connect_url', type='text', value='ws://localhost:3000/')
+            select(id='protocol')
+                option(value='') Default protocol, non chosen
+                option(value='echo-protocol') echo-protocol
+                option(value='broadcast-protocol') broadcast-protocol
+                option(value='text') text
+                option(value='json') json
+            br
+            label Username:
+            input(id='username', type='text')
+            br
+            input(id='connect', type='button', value='connect')
+            input(id='close', type='button', value='Close connection')
+
+    br
+
+    p
+        label Send message:
+        input(id='message', type='text')
+        input(id='send_message', type='button', value='Send message')
+
+
+    label Log:
+    div(id='output', class='output')
+
+    .filler
+
+block scripts
+    script(src='js/client.js')

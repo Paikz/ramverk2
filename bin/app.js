@@ -2,7 +2,7 @@
 
 //Vars
 var express = require("express");
-var lessMiddleware = require('less-middleware');
+var lessExpress = require('less-express');
 const path = require("path");
 
 //Routes
@@ -19,9 +19,10 @@ if (app.get('env') === 'development') {
 }
 
 //map routes to right directory
-app.use(lessMiddleware(__dirname + '../public'));
-app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
+app.get('/css/style.css', lessExpress('./public/stylesheets/style.less'));
+app.use(express.static(path.join(__dirname, '../public')));
+
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {

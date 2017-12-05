@@ -38,4 +38,10 @@ router.get("/app", (req, res) => {
     });
 });
 
+router.get("/chat", (req, res) => {
+    res.render("chat", {
+        title: "Chat"
+    });
+});
+
 module.exports = router;
