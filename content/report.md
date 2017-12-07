@@ -63,7 +63,27 @@ Jag har använt TDD i andra kurser innan så jag är väl medveten om fördelarn
 Jag har för tillfället ej kommit på något speciellt jag vill göra med min applikation, så jag har bara konfigurerat upp en placeholder server och klient så att jag lätt kan börja arbeta senare när jag kommit på en ide att slutföra. Klienten använder som sagt Angular och servern använder express. Angular använder Typescript, ett superset till javascript och på stylesidan så används LESS. CI kjedjan är uppgjord av Travis CI, Scrutinizer CI samt Coveralls. Servern är tänkt att fungera som ett REST API och använda mongoDB i framtiden. Detta är dock inte riktigt implementerat än.
 
 # KMOM04
-TBA
+
+**Är du ny på realtidsprogrammering eller har du gjort liknande tidigare?**
+
+Har gjort liknande i en annan javascriptkurs där vi också gjorde en chatt med server och klient liknande den man gjorde på redovisningssidan. Har arbetat väldigt lite med sockets i python också för att kunna skicka information mellan två användare. Annars har det varit väldigt lite realtidsprogrammering för min del.
+
+**Hur gick det att jobba med konceptet realtidsprogrammering i webben, några reflektioner?**
+
+Generellt så gick det bra när jag implementerade koden till båda chatterna. Konceptet med realtid och async är jag van vid då jag jobbat med det tidigare inom angular. Att veta vilka lifecycle hooks man ska använda och utnyttja kan ta sin tid i början men när man väl kommer in i det så är det inte så svårt. Det svåraste i detta kursmoment var att bestämma sig för vilket subprotokoll man skulle använda. Jag bestämde mig för json och då var man såklart tvungen att anpassa koden för json vilket tog sin lilla tid att felsöka.
+
+Annars rullade det på fint. Jag fick lite problem med att connecta till min socket när jag använde min egen klient och server i appen och jag trodde det var ett cors-problem, det visade sig dock bara vara en bugg med ordningen jag strukturerade upp koden i. Klienten hann inte connecta till websocketen innan jag kollade socketens readystate.
+
+**Berätta om din chatt som du integrerade i redovisa-sidan.**
+
+Chatten på redovisningssidan är i princip samma chatt som man guidades igenom i kursmomentet. En chatt som hade möjlighet att välja subprotol beroende på vilken server man anslöt sig till. Det jag la till var naturligtvis att skriva ut nicket på användarna.
+
+**Berätta om den realtidsfunktionalitet du väljer att integrera i din klient/server applikation.**
+
+Jag har väldigt svårt att komma på en app att göra till projektet. Jag fortsätter med kursmomenten och implementerar något generellt sålänge som jag kan göra om och använda senare. Jag använder Angular så jag har implementerat en chatt till min app som använder json. Detta kan såklart komma att bli något helt annat än en chatt i slutändan, men just nu så anpassade jag bara koden till angular.
+
+Som slutnotis kan jag säga att jag hade väldigt svårt att enhetstesta websockets så min coverage drogs ner till bottnen. Det hade varit kul om något exempel på enhetstestning med websockets hade kunnat tas upp senare.
+
 # KMOM05
 TBA
 # KMOM06
