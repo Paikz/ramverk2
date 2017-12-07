@@ -1,9 +1,10 @@
 version: "3"
 services:
       node9:
-          image: "node:9"
+          build:
+              context: .
+              dockerfile: docker/Dockerfile-node-9-alpine
           user: "node"
-          working_dir: /app
           environment:
             - NODE_ENV=production
           volumes:
@@ -12,9 +13,10 @@ services:
             - "8089:3000"
           command: "npm start"
       node8:
-          image: "node:8"
+          build:
+              context: .
+              dockerfile: docker/Dockerfile-node-8-alpine
           user: "node"
-          working_dir: /app
           environment:
             - NODE_ENV=production
           volumes:
@@ -23,9 +25,10 @@ services:
             - "8088:3000"
           command: "npm start"
       node7:
-          image: "node:7"
+          build:
+              context: .
+              dockerfile: docker/Dockerfile-node-7-alpine
           user: "node"
-          working_dir: /app
           environment:
             - NODE_ENV=production
           volumes:
@@ -34,9 +37,10 @@ services:
             - "8087:3000"
           command: "npm start"
       node6:
-          image: "node:6"
+          build:
+              context: .
+              dockerfile: docker/Dockerfile-node-6-alpine
           user: "node"
-          working_dir: /app
           environment:
             - NODE_ENV=production
           volumes:
