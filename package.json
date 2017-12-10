@@ -40,6 +40,7 @@
     "jsonlint": "^1.6.2",
     "less-express": "^1.1.0",
     "mocha": "^4.0.1",
+    "mongodb": "^2.2.33",
     "nyc": "^11.3.0",
     "stylelint": "^8.2.0",
     "supertest": "^3.0.0",

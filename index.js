@@ -3,7 +3,7 @@
 
 var http = require('http');
 var app = require('./bin/app');
-var socket = require('./websocket/server');
+var socket = require('./src/websocket/server');
 var server = http.createServer(app);
 var socketServer = socket(server);
 

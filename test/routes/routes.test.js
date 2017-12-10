@@ -19,12 +19,6 @@ describe('loading express', function() {
             .expect(200, done);
     });
 
-    it('respond to /home', function testIndex(done) {
-        request(server)
-            .get('/home')
-            .expect(200, done);
-    });
-
     it('respond to /about', function testAbout(done) {
         request(server)
             .get('/about')
@@ -46,6 +40,12 @@ describe('loading express', function() {
     it('respond to /chat', function testReport(done) {
         request(server)
             .get('/chat')
+            .expect(200, done);
+    });
+
+    it('respond to /db', function testReport(done) {
+        request(server)
+            .get('/db')
             .expect(200, done);
     });
 

@@ -1,0 +1,37 @@
+extends layout.pug
+
+block content
+    h1= "Welcome to Mumindalen"
+
+    form.dbForm(action='/db')
+        input(id='name', type='text', placeholder='Name')
+        input(id='city', type='text', placeholder='City')
+        input(id='country', type='text', placeholder='Country')
+        input(id='submit', type='button', value='Add Entry', onclick='create()')
+
+    br
+
+    table(cellspacing='0', cellpadding='0')
+        thead
+            tr
+                th  Name
+                th  City
+                th  Country
+                th  Edit
+                th  Remove
+
+        tbody
+            each value, index in database
+                tr(id='tableRow')
+                    td  #{value.namn}
+                    td  #{value.bor}
+                    td  #{value.land}
+                    td
+                        input(type="button" onclick='setInputValues(this.id)', id='' + value._id value="Edit")
+                    td
+                        input(type="button" onclick='remove(this.id)', id='' + value._id value="Remove")
+    br
+    a(href="/db/setup") Restore Database
+
+block scripts
+    script(src='js/db.js')

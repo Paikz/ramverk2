@@ -6,7 +6,12 @@ var lessExpress = require('less-express');
 const path = require("path");
 
 //Routes
-var routes = require('../routes/routes');
+var home = require('../routes/home');
+var about = require('../routes/about');
+var report = require('../routes/report');
+var chat = require('../routes/chat');
+var db = require('../routes/db');
+var appRoute = require('../routes/app');
 
 var app = express();
 
@@ -19,7 +24,12 @@ if (app.get('env') === 'development') {
 }
 
 //map routes to right directory
-app.use('/', routes);
+app.use('/', home);
+app.use('/report', report);
+app.use('/about', about);
+app.use('/app', appRoute);
+app.use('/chat', chat);
+app.use('/db', db);
 app.get('/css/style.css', lessExpress('./public/stylesheets/style.less'));
 app.use(express.static(path.join(__dirname, '../public')));
 
