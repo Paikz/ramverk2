@@ -43,12 +43,6 @@ describe('loading express', function() {
             .expect(200, done);
     });
 
-    it('respond to /db', function testReport(done) {
-        request(server)
-            .get('/db')
-            .expect(200, done);
-    });
-
     it('respond to /random/failure/', function testError(done) {
         request(server)
             .get('/random/failure')
