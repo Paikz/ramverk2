@@ -85,7 +85,29 @@ Jag har väldigt svårt att komma på en app att göra till projektet. Jag forts
 Som slutnotis kan jag säga att jag hade väldigt svårt att enhetstesta websockets så min coverage drogs ner till bottnen. Det hade varit kul om något exempel på enhetstestning med websockets hade kunnat tas upp senare.
 
 # KMOM05
-TBA
+**Hur gick det att komma igång med databasen MongoDB?**
+
+Gick riktigt dåligt i början. Jag kör docker på windows och jag lyckades inte få mongo att fungera. Mongo ville ej starta så det var omöjligt att använda klienten. Jag kommer inte riktigt ihåg vad jag fick för felmeddelande men jag kommer ihåg att jag inte hade tålamod nog att lösa det. Jag installerade istället elementary OS, ett linuxdistro baserat på ubuntu. KÖrde upp en docker med mongo där och allt fungerade perfekt på en gång.
+
+Efter det gick det rätt snabbt att komma igång. Jag tyckte det var lite småbökigt att hantera datan i express med bara mongodb, men när jag la till mongoose så blev allt väldigt mycket enklare. Man skapar bara ett schema som visar hur datan ska se ut. Sen kan man lätt skapa objekt från dessa scheman som man lägger in i databasen.
+
+**Vilken syn har du på databaser inom konceptet NoSQL?**
+
+Då jag använder Angular så är det väldigt uppskattat att använda mongoDb och NoSQL databaser. Man jobbar oftast med objekt och json och då blir allt mycket enklare att göra i databasen. Detta gör dock inte NoSQL bättre än relationsdatabaser på alla plan. Det gäller bara att hitta rätt användningsområde för allt.
+
+**Reflektera över skillnader och likheter mellan relationsdatabaser och databaser inom NoSQL.**
+
+Som sagt så blir det mycket smidigare att använda NoSQL i detta syftet då man lätt bara kan stoppa in och ta ut sin data. Jag kan antingen få ut allt eller specificera exakt det jag vill ha. Det kan man såklart med relationsdatabaser också men det känns smidigare att göra det i mongodb då det ej behövs kluriga sql satser eller relationer mellan objekten. Det känns som att NoSQL är det man ska arbeta med om man kodar i JavaScript medans relationsdatabaser är enklare att arbeta med i tex PHP.
+
+**Vilka är dina tankar om asynkron programmering med JavaScript?**
+
+Angular använder asynkron programmering väldigt ofta. Det händer mest när man använder services för att använda get, post, put, delete etc. Man kan antingen välja att använda promises för att requesta något från servern och vara säker på att allt gått rätt till eller använda Observables där man kan subscriba till dem för att få alla ändringar som görs i ett typ av flöde. Jag använder just nu promises då jag requestar information en gång och inte mer till databasen. Det finns även lifecycle hooks i komponenter man kan använda för att få rätt på det asynkrona inom Angular, tex onCreate().
+
+**Hur känner du för Docker och det sättet vi jobbar med tjänster i kontainrar?**
+
+Docker har jag knappt sett någon mening med i tidigare kursmoment men nu i kmom05 har det varit väldigt användbart. Att starta upp express länkat till mongodb är väldigt smidigt och jag hade nog inte gjort på något annat sett om jag hade fått bestämma själv. Nu måste ju dock användare starta upp sina egna mongodb om de ska använda npm start, men det får dem hantera antar jag.
+
+
 # KMOM06
 TBA
 # Project

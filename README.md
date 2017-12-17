@@ -16,7 +16,7 @@
 Clone the repository  
 `npm install`  
 `npm start`  
-`make test`  
+`npm test`  
 
 ## Docker
 
