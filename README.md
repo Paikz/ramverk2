@@ -22,7 +22,7 @@ npm test
 
 ## Environment Variables
 
-DBWEBB_PORT
+DBWEBB_PORT  
 DBWEBB_DSN
 
 ## Docker
