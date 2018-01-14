@@ -14,19 +14,34 @@
 ## Installation
 
 Clone the repository  
-`npm install`  
-`npm start`  
-`npm test`  
+```
+npm install
+npm start
+npm test
+```
+
+## Environment Variables
+
+DBWEBB_PORT
+DBWEBB_DSN
 
 ## Docker
 
 Start up an express server with Docker:  
-`npm run node[version]`  
-&nbsp;&nbsp;&nbsp;&nbsp;Currently supported: node 6,7,8,9
+```
+npm run node6
+npm run node7
+npm run node8
+npm run node9
+```  
 
 Stop docker containers:  
 `npm run stop` || `npm stop`  
 
 Run tests for different node versions:  
-`npm run test-node[version]`  
-&nbsp;&nbsp;&nbsp;&nbsp;Currently supported: node 6,7,8,9
+```
+npm run test-node6
+npm run test-node7
+npm run test-node8
+npm run test-node9
+```  
