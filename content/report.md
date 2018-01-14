@@ -109,6 +109,63 @@ Docker har jag knappt sett någon mening med i tidigare kursmoment men nu i kmom
 
 
 # KMOM06
-TBA
+**Reflektera över vikten av infrastruktur för moduler för ett programmeringsspråk.**
+
+Det är väldigt viktigt att allt går snabbt och smärtfritt för ett programmeringsspråk som JavaScript. Vid större projekt är man beroende av mängder av dependencies vilket resulterar i att infrastrukturen för moduler måste hålla hög kvalite. Enkelt att installera, uppdatera och använda är måsten. Python gör detta väldigt bra till exempel. Man importerar paket som magi i Python. Npm har lyckats uppnå en väldigt simpel och förståelig struktur vilket jag tror är anledningen till att det har blivit så populärt. En bra infrastruktur lockar snabbt användare och språket växer.
+
+**Vill du ge dig på att förklara att just npm är den tjänsten som växt snabbast av de modulerkataloger som presenteras på webbplatsen “Module Counts”?**
+
+Jag hade sagt att det är tillgängligheten och att det är så modulärt som gör det så populärt. Det tar ett commando så är man helt plötsligt igång. Man kan smidigt välja om man ska installera globala eller lokala paket, för användare eller för utvecklare. Versioner hanteras på ett smart sätt och kan såklart ändras snabbt. Att publicera och versionshantera görs med ett commando vardera. Det går så otroligt snabbt att publicera ett paket som hela världen kan ta del av.
+
+**Reflektera över hur arbetet gick att välja, separera, publisera och sedan åter integrera module i din applikation.**
+
+Jag ville göra en modul som inte blev för mäktig kodmässigt. Jag valde att separera min middleware i Express som verifierar inkommande requests jwt token. Det gick snabbt att flytta ut middleware'en till en egen modul och publicera. Att åter intergrera modulen i mitt projekt gick väldigt smidigt och det var skönt att man några rader kod med paketet. Det som tog mest tid med projektet var att enhetstesta modulen noggrant. Jag har inte så bra koll på enhetstester men jag kände att jag har bättre koll nu. Jag använde Mocha och Chai som assertion bibliotek och det funkade väldigt bra.
+
+Det största problemet var att lyckas få upp en server som kunde köra testerna automatiskt, men det lyckades jag med till slut. Att publicera modulen till npm gick på några minuter. Jag blev överraskad över hur smidigt det var!
+
+**Sista uppgiften om att dokumentera och färdigställa redovisa-sidan, tog det mycket tid eller hade du allt klart?**
+
+Som tur var så hade jag redan den delen klar sedan tidigare.
+
 # Project
-TBA
+**Länka till ditt GitHub repo och berätta om/vilka optionella krav du gjort. Berätta också om du byggde vidare på applikationen från kursmomenten eller om du gjorde nya vägval rörande tekniker och applikation inför projektet.**
+
+Jag skrev en artikel till Krav 6 om hur man implementerar JWT tokens och säkerställer sin applikation / REST API med Express och Angular. Den tar upp vad jwt är för något, vad de är bra till samt kodexempel som visar hur implementationen kan se ut på klienten samt backenden.
+
+Krav 4 får bedömas av rättaren om jag har klarat eller ej. Det var inga direkta riktlinjer på hur en bra README ser ut så jag strukturerade min readme på ett sätt jag själv hade velat att en readme skulle sett ut. Jag har tydliga sektioner, requirements finns i en tabell samt är kod highlightad i kodblock.
+
+Krav 5 har jag ej gjort, dock har jag försökt deploya mitt projekt. Jag lyckades komma halvvägs. Klienten lyckades jag builda och driftsätta på github pages. Dock är inte servern driftsatt än så klienten är rätt värdelös. Klienten hittas under www.paikz.github.io
+
+Jag delade upp applikationen i backend och frontend. Till backenden kunde jag sno mycket struktur från redovisningssidan. Då backenden är ett REST API så tog jag min redovisningssida och tog bort de delar jag inte behövde, vilket i runda slängar var routes, viewengine, less och den publika foldern. Jag ville bara starta en server som tog emot request och skickade tillbaks information.
+
+Frontenden gjorde jag dock från scratch i Angular. Det var frontend som tog mest tid i detta projekt. Att strukturera upp en applikation tog sin tid. Det var mycket att tänka på. Tittar man på requirements tabellen i README'n så är de viktigaste funktionerna listade vilket även är dem som tog upp det mesta av tiden. Det har dock varit väldigt nyttigt. Även om jag har arbetat med Angular innan så har jag tvingats få mycket bättre koll på javascript som ett språk under detta projekt.
+
+Promises har jag arbetat med väldigt mycket i detta projekt samt async. Det är ett helt annat tänk att koda med async vilket tar sin tid att komma in i. Att till exempel requesta 10 bilder från servern, processa dessa som blobs och sedan sortera dem beroende på datumet de är skapade på var komplicerat att få rätt.
+
+Det känns som att jag fokuserade på fel delar i detta projekt. Jag gjorde väldigt mycket funktioner och skrev mycket kod till min applikation men la bland annat unit testing och docker images på storen lite åt sidan för att hinna med så mycket som möjligt. Det känns som att kursen är mer en devops kurs än fokus på ramverken man använder vilket nu i efterhand känns tråkigt för betyget då jag inte hann med att deploya hela min applikation och skapa docker images på storen. Men men, jag har lärt mig mycket i alla fall.
+
+**Skriv ett allmänt stycke om hur projektet gick att genomföra. Problem/lösningar/strul/enkelt/svårt/snabbt/lång tid, etc. Var projektet lätt eller svårt? Tog det lång tid? Vad var svårt och vad gick lätt? Var det ett bra och rimligt projekt för denna kursen?**
+
+Det tog väldigt lång tid att göra projektet för mig. Devops delen stal mycket tid för att få saker som docker och CI kedjan att fungera. Att man själv kodade både frontend och backend var mäktigt, jag märkte nu i efterhand att jag tog på mig alldeles för svårt projekt. Dock är jag väldigt nöjd med vad jag åstadkommit med tiden jag lagt ner på projektet.
+
+Det svåraste problemet jag stötte på var att lagra uppladdade filer till databasen. Jag ville kunna ladda upp egna bilder från datorn eller mobilen, inte använda url'er. Jag ville först lagra bilderna i databasen men det var för mycket strul så fick jag till en lösning där jag lagrade bilden på servern, sparade pathen i databasen och sedan fick jag skicka bilderna som blobs till klienten.
+
+Som jag skrev innan hade jag även problem att visa bilderna och dess properties rätt. Det handlade om att jag inte kunde mappa rätt data i varje http call. Det är en dålig ide att använda for loopar tillsammans med async och promises, men en .bind() funktion räddade mig.
+
+Att lära sig mongodb / Mongoose tog sin tid det med då man var tvungen att lära sig hur man bäst skulle strukturera sina modeller för att kunna få allt att fungera. Ett exempel på detta var att kunna följa och avfölja olika users. User-modellerna var tvungna att ha en array med User-objekt för att kunna nå deras properties. Detta gjorde att man kunde få tag på varenda post alla man följde publicerade, genom sitt eget user-objekt. Att läsa Mongoose manual rekommenderas, det gäller att ha koll på de inbyggda funktionerna.
+
+Mycket tid har även lagts ner på responsiv design. Sidan skalar bra till olika sorters upplösningar och storlekar.
+
+Projektet tog lång tid för mig som sagt och det var stressigt, men jag tror jag gjorde det svårt för mig själv. Jag kunde gjort ett mindre projekt och fokuserat mer på devopsdelen. Så svårighetsgraden kan jag inte direkt klaga på. Dock lärde jag mig jättemycket så nu i efterhand är jag ändå glad att jag la ner så mycket tid på det.
+
+Projektet känns absolut rimligt för denna kurs. Det kändes som ett bra avslut på det man lärt sig.
+
+**Avsluta med ett sista stycke med dina tankar om kursen och vad du anser om materialet och handledningen (ca 5-10 meningar). Ge feedback till lärarna och förslå eventuella förbättringsförslag till kommande kurstillfällen. Är du nöjd/missnöjd? Kommer du att rekommendera kursen till dina vänner/kollegor? På en skala 1-10, vilket betyg ger du kursen?**
+
+Med tanke på namnet så trodde jag att större fokus skulle läggas på javascriptramverk som React, Angular, Vue etc. Dock visade det sig att det var större fokus på devops med ci kedjor, docker och unittest. Det är inget klagomål, jag bara förväntade mig annat från första början. Man har ju alltid haft friheten att göra vad man vill i princip så kursens upplägg har det inte varit något fel på. Något jag absolut ville lära mig var node och Express, och det fick jag så jag är nöjd.
+
+Jag är dock missnöjd med att projektet hade så lite fokus på implementationen man gjorde. Man får poäng för devopsdelarna men har man gjort något coolt kodmässigt så belönas man ej. Jag störde mig även lite på hur repetivt det var att skapa 4+ github repon och sätta upp docker och CI kedjor till dem. Jag antar att det hör ihop, dock tar det tid som jag hellre hade lagt på annat.
+
+Förutom ovanstående missnöjen så är jag sammanfattningsvis nöjd med kursen. Detta är en av dem kurserna jag lärt mig mest av under hela utbildningen och jag hade rekommenderat alla webbproggare att ta sig an denna kursen. Man tar ju sig an rollen som en team leader som ska välja tekniker och det har varit väldigt nyttigt och utmanande.
+
+Jag ger kursen 9/10 på grund av hur mycket man faktiskt lär sig under resan.
