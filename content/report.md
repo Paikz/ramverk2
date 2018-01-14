@@ -134,7 +134,7 @@ Jag skrev en artikel till Krav 6 om hur man implementerar JWT tokens och säkers
 
 Krav 4 får bedömas av rättaren om jag har klarat eller ej. Det var inga direkta riktlinjer på hur en bra README ser ut så jag strukturerade min readme på ett sätt jag själv hade velat att en readme skulle sett ut. Jag har tydliga sektioner, requirements finns i en tabell samt är kod highlightad i kodblock.
 
-Krav 5 har jag ej gjort, dock har jag försökt deploya mitt projekt. Jag lyckades komma halvvägs. Klienten lyckades jag builda och driftsätta på github pages. Dock är inte servern driftsatt än så klienten är rätt värdelös. Klienten hittas under www.paikz.github.io
+Krav 5 har jag ej gjort, dock har jag försökt deploya mitt projekt. Jag lyckades komma halvvägs. Klienten lyckades jag builda och driftsätta på github pages. Dock är inte servern driftsatt än så klienten är rätt värdelös. Klienten hittas under paikz.github.io
 
 Jag delade upp applikationen i backend och frontend. Till backenden kunde jag sno mycket struktur från redovisningssidan. Då backenden är ett REST API så tog jag min redovisningssida och tog bort de delar jag inte behövde, vilket i runda slängar var routes, viewengine, less och den publika foldern. Jag ville bara starta en server som tog emot request och skickade tillbaks information.
 
